@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+       SELECIONE O CONTATO:
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://t.ctcdn.com.br/GK3xZeLTAW7-9HJFe1E56Wxs3_E=/512x288/smart/filters:format(webp)/i489760.png" />
+    <ion-card-header>
+      <ion-card-title>LISTA DE CONTATOS</ion-card-title>
+      <ion-card-subtitle>Clique no contato para mais informações</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+  <ion-list [inset]="true">
+    <ion-card *ngFor="let contato of listaContatos" color="dark">
+      <ion-item button (click)="exibirContato(contato)">
+        
+        <ion-avatar slot="start">
+          <img [src]="contato.foto">
+        </ion-avatar>
+
+      <ion-card-header><ion-card-title>{{contato.nome}}</ion-card-title></ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-item>
+    </ion-card>
+    </ion-list>
+  </ion-card>
+</ion-content>

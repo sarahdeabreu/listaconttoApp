@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>INFORMAÇÕES</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>BACK</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngIf="contato">
+    <img [src]="contato.foto">
+    <ion-card-header><ion-card-title> {{contato.nome }} </ion-card-title>
+    <ion-card-subtitle> {{contato.id }} </ion-card-subtitle></ion-card-header>
+    <ion-card-content><ion-card-subtitle> {{contato.email }} </ion-card-subtitle>
+    </ion-card-content>
+    </ion-card>
+
+
+
+    <ion-card>
+      <ion-item>
+        <ion-button slot="start" color="dark">
+          <ion-icon slot="icon-only" name="navigate"></ion-icon>
+        </ion-button>
+        <ion-label>Mensagem ou Favoritar</ion-label>
+        <ion-button slot="end" color="dark">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+  
+      <ion-item fill="solid">
+        <ion-label position="floating">Adicionar status ou descrição</ion-label>
+        <ion-input placeholder="Enter text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>MAIS OPÇÕES</ion-label>
+        <ion-select placeholder="Selecione">
+          <ion-select-option value="">Adicionar a um grupo</ion-select-option>
+          <ion-select-option value="nes">Bloquear contato</ion-select-option>
+          <ion-select-option value="n64">Silenciar temporaiamente</ion-select-option>
+          <ion-select-option value="ps">Apagar Contato</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+    </ion-card>
+
+</ion-content>
